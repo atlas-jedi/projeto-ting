@@ -10,7 +10,7 @@ class Queue(AbstractQueue):
         return self.__length
 
     def __str__(self):
-        return self.data
+        return str(self.data)
 
     def enqueue(self, value):
         self.data.append(value)
