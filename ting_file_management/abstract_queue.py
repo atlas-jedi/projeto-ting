@@ -13,3 +13,7 @@ class AbstractQueue(ABC):
     @abstractmethod
     def dequeue(self):
         raise NotImplementedError
+
+    @abstractmethod
+    def search(self, index):
+        raise NotImplementedError
