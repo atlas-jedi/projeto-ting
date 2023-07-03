@@ -25,8 +25,15 @@ def process(path_file: str, instance: AbstractQueue):
     print(result, file=sys.stdout)
 
 
-def remove(instance):
-    """Aqui irá sua implementação"""
+def remove(instance: AbstractQueue):
+    result = None
+    if len(instance) == 0:
+        result = "Não há elementos"
+    else:
+        path_file = instance.search(0)["nome_do_arquivo"]
+        result = f"Arquivo {path_file} removido com sucesso"
+        instance.dequeue()
+    print(result, file=sys.stdout)
 
 
 def file_metadata(instance, position):
