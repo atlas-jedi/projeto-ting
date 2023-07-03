@@ -1,6 +1,4 @@
 import sys
-
-# from ting_file_management.queue import Queue
 from ting_file_management.abstract_queue import AbstractQueue
 from ting_file_management.file_management import txt_importer
 
@@ -36,17 +34,9 @@ def remove(instance: AbstractQueue):
     print(result, file=sys.stdout)
 
 
-def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
-
-
-# if __name__ == "__main__":
-#     list_1 = Queue()
-#     file = "arquivo_teste.txt"
-#     caminho = (
-#         f"C:/Users/andre/GitHub/trybe/sd-025-b-project-ting/statics/{file}"
-#     )
-
-#     for i in range(4):
-#         process(caminho, list_1)
-#         print(f"Tamanho da lista na execução[{i}]: {len(list_1)}")
+def file_metadata(instance: AbstractQueue, position: int):
+    try:
+        file = instance.search(position)
+        print(file, file=sys.stdout)
+    except IndexError:
+        print("Posição inválida", file=sys.stderr)
